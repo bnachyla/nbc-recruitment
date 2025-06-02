@@ -2,53 +2,57 @@
 * API documentation in PL/ENG [available here](http://api.nbp.pl/en.html)
 
 ### API Description
-The National Polish Bank API provides various of endpoints, but in this task we will focus only on the small part of its functionality.
-You can read data from three kind of tables : 
-* Table Rates - exchange rates fo US Dollar
-* Table B - mean rates of foreign currencies (but different from the one in A)
-* Table C - rates of buy/sell operations of foreign currencies (most popular one)
+The National Polish Bank API provides various [data](https://nbp.pl/en/statistic-and-financial-reporting/rates/) about exchange rates, but in this task we will focus only on the small part of its functionality.
+You can see all necessary data in:
+* [Table A](https://nbp.pl/en/statistic-and-financial-reporting/rates/table-a/) - exchange rates for Polish Zloty (PLN) against foreign currencies
 
-Example answers from this API look as follows :
+The data can be retrieved in json or XML format using API calls, for instance: `api.nbp.pl/api/exchangerates/rates/A` (for format JSON: header `Accept: application/json` or a parameter `?format=json`,
+for format XML: header `Accept: application/xml` or parameter `?format=xml`) :
+Sample JSON response:
 ```json
-[
-  {
-    "table": "Rates",
-    "no": "056/A/NBP/2021",
-    "effectiveDate": "2021-03-23",
-    "rates": [
-      {
-        "currency": "bat (Tajlandia)",
-        "code": "THB",
-        "rate": 0.1251
-      },
-      {
-        "currency": "American Dollar",
-        "code": "USD",
-        "rate": 1.0
-      },
-      {
-        "currency": "Australlian Dollar",
-        "code": "AUD",
-        "rate": 2.9574
-      },
-      {
-        "currency": "Candaian Dollar",
-        "code": "CAD",
-        "rate": 3.0657
-      },
-      {
-        "currency": "afgani (Afganistan)",
-        "code": "AFN",
-        "rate": 0.049458
-      }
-    ]
-  }
-]
+{
+  "table": "A",
+  "no": "105/A/NBP/2025",
+  "effectiveDate": "2025-06-02",
+  "rates": [
+    {
+      "currency": "bat (Tajlandia)",
+      "code": "THB",
+      "mid": 0.1146
+    },
+    {
+      "currency": "American Dollar",
+      "code": "USD",
+      "mid": 3.7282
+    },
+    {
+      "currency": "Australlian Dollar",
+      "code": "AUD",
+      "mid": 2.9574
+    },
+    {
+      "currency": "Canadian Dollar",
+      "code": "CAD",
+      "mid": 3.0657
+    },
+    {
+      "currency": "afgani (Afganistan)",
+      "code": "AFN",
+      "mid": 0.049458
+    }
+  ]
+}
 ```
+
+The full API description you can find [here](https://api.nbp.pl/en.html), but please use NBPRestClient in order to access it.
+
 ## What we want you to do
 
-`` You're provided with the class `CurrencyWallet`. Inside this class you can only find an BigDecimal `budget` in US dollars. Please implement all the necessary things in the class in order to be able to perform following task
-    * Create endpoint which with given budget tries to buy one unit of each currency
+You're provided with the class `CurrencyWallet`. Inside this class you can only find an BigDecimal `budget` in PLN.
+Please implement all the necessary things in the class in order to be able to perform following task
+
+    * Create endpoint which with given budget tries to buy one unit of each currency from the sample response shown above.
     * Check if you have enough money in your budget to buy all the currencies. If not, try to show it somehow. 
     * Implement endpoint `/balance` which displays how much money you have left in the budget and what currencies you have bought.
-``
+
+If you see any issues in the existing code, please propose the fix.
