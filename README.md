@@ -26,7 +26,7 @@ Sample JSON response:
       "mid": 3.7282
     },
     {
-      "currency": "Australlian Dollar",
+      "currency": "Australian Dollar",
       "code": "AUD",
       "mid": 2.9574
     },
@@ -48,10 +48,10 @@ The full API description you can find [here](https://api.nbp.pl/en.html), but pl
 
 ## What we want you to do
 
-You're provided with the class `CurrencyWallet`. Inside this class you can only find an BigDecimal `budget` in PLN.
-Please implement all the necessary things in the class in order to be able to perform following task
+You're provided with the class `CurrencyWallet`. Inside this class you can only find a BigDecimal `budget` (in PLN).
+Please implement all the necessary things in the class in order to be able to perform following task:
 
-    * Create endpoint which with given budget tries to buy one unit of each currency from the sample response shown above.
+    * Create endpoint which with given budget tries to buy one unit of each currency from the list of currency codes that is given as in input.
     * Check if you have enough money in your budget to buy all the currencies. If not, try to show it somehow. 
     * Implement endpoint `/balance` which displays how much money you have left in the budget and what currencies you have bought.
 

@@ -9,7 +9,7 @@ import java.util.List;
 @NoArgsConstructor
 public class CurrencytableDTO {
     private String table;
-    private String no;
-    private String effectiveDate;
+    private String currency;
+    private String code;
     private List<currencyDTO> rates;
 }

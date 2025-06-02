@@ -4,11 +4,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 @Data
 @NoArgsConstructor
 public class currencyDTO {
-    String currency;
-    String code;
-    BigDecimal  price;
+    String no;
+    Date effectiveDate;
+    BigDecimal  mid;
 }

@@ -15,15 +15,15 @@ public class home {
 
     @GetMapping(value = "/tables", produces = "application/json")
     ResponseEntity<String> getCurrencyTables(){
-        return restClient.getCurrencyTable("rates");
+        return restClient.getCurrencyTable("A");
     }
 
     @GetMapping(value = "/rate", produces = "application/json")
 
     ResponseEntity<String> currencyRate(
-            @RequestParam(name = "currency", defaultValue = "xyz") String currency
+            @RequestParam(name = "currency", defaultValue = "EUR") String currency
     ){
-        return restClient.getCurrencyRate("a", currency);
+        return restClient.getCurrencyRate("A", currency);
     }
 
 }
