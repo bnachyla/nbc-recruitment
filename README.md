@@ -56,3 +56,18 @@ Please implement all the necessary things in the class in order to be able to pe
     * Implement endpoint `/balance` which displays how much money you have left in the budget and what currencies you have bought.
 
 If you see any issues in the existing code, please propose the fix.
+
+## Bonus task:
+<details>
+    <summary>Open it later</summary>
+
+Write a function to transfer money between two accounts with proper handling of concurrency:
+```java
+public void transfer(Account acc1, Account acc2, BigDecimal amount);
+```
+Account should have:
+
+    * a distinct identifier.
+    * a balance as a BigDecimal to support precise monetary calculations.
+
+</details>
